@@ -1,6 +1,10 @@
 import java.util.Enumeration;
 
-public class HtmlStatement extends Statement {
+public class TemplateStatment {  
+
+	public TemplateStatment() {
+
+	}
 
     public String value(Customer aCustomer) {
         Enumeration rentals = aCustomer.getRentals();
@@ -14,6 +18,6 @@ public class HtmlStatement extends Statement {
         result += "Amount owed is " + String.valueOf(aCustomer.getTotalCharge()) + " ";
         result += "You earned " + String.valueOf(aCustomer.getTotalFrequentRenterPoints()) + " frequent renter points";
         return result;
-     }
+    }
 
 }

@@ -18,7 +18,7 @@ public class Customer {
    }
   
    public String statement() {
-      return new TextStatement().value(this);
+      return new TemplateStatment().value(this);
    }
 
    public Enumeration getRentals() {
@@ -43,10 +43,6 @@ public class Customer {
          result += each.getFrequentRenterPoints();
       }
       return result;
-   }
-
-   public String htmlStatement() {
-      return new HtmlStatement().value(this);
    }
 
 }
