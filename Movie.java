@@ -20,11 +20,11 @@ public class Movie {
       _priceCode = arg;
   }
 
-  public String getTitle (){
+  public String getTitle () {
       return _title;
   }
 
-  public double getCharge(int daysRented){
+  public double getCharge(int daysRented) {
     double thisAmount = 0;
     switch (_priceCode) {
      case Movie.REGULAR:
@@ -40,8 +40,22 @@ public class Movie {
         if (daysRented > 3)
            thisAmount += (daysRented - 3) * 1.5;
          break;
+    }
+    return thisAmount;
   }
-  return thisAmount;
+
+  public int getFrequentRenterPoints(int daysRented) {
+    int frequentRenterPoints = 0;
+
+    // add frequent renter points
+    frequentRenterPoints ++;
+    // add bonus for a two day new release rental
+    if ((_priceCode == Movie.NEW_RELEASE) && daysRented > 1) {
+        frequentRenterPoints ++;
+    }       
+
+    return frequentRenterPoints;
+
   }
 
 }
