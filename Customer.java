@@ -18,7 +18,7 @@ public class Customer {
    }
   
    public String statement() {
-      return new TemplateStatment().value(this);
+      return new TemplateStatement().value(this);
    }
 
    public Enumeration getRentals() {
